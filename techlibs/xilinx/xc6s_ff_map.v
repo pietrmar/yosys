@@ -71,34 +71,12 @@ endmodule
 
 // Async reset.
 
-module  \$_DFF_NN0_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDCE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .CLR(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$_DFF_NP0_ (input D, C, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
     $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
   else
     FDCE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .CLR( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$_DFF_PN0_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDCE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .CLR(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -112,34 +90,12 @@ module  \$_DFF_PP0_ (input D, C, R, output Q);
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
 
-module  \$_DFF_NN1_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDPE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .PRE(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$_DFF_NP1_ (input D, C, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
     $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
   else
     FDPE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .PRE( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$_DFF_PN1_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDPE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .PRE(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -155,34 +111,12 @@ endmodule
 
 // Async reset, enable.
 
-module  \$__DFFE_NN0 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDCE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .CLR(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFE_NP0 (input D, C, E, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
     $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
   else
     FDCE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .CLR( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFE_PN0 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with asynchronous reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDCE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .CLR(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -196,34 +130,12 @@ module  \$__DFFE_PP0 (input D, C, E, R, output Q);
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
 
-module  \$__DFFE_NN1 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDPE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .PRE(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFE_NP1 (input D, C, E, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
     $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
   else
     FDPE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .PRE( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFE_PN1 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with asynchronous set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDPE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .PRE(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -239,34 +151,12 @@ endmodule
 
 // Sync reset.
 
-module  \$__DFFS_NN0_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDRE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .R(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFS_NP0_ (input D, C, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
     $error("Spartan 6 doesn't support FFs with reset initialized to 1");
   else
     FDRE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .R( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFS_PN0_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDRE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .R(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -280,34 +170,12 @@ module  \$__DFFS_PP0_ (input D, C, R, output Q);
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
 
-module  \$__DFFS_NN1_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDSE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .S(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFS_NP1_ (input D, C, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
     $error("Spartan 6 doesn't support FFs with set initialized to 0");
   else
     FDSE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .S( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFS_PN1_ (input D, C, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDSE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(1'b1), .S(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -323,34 +191,12 @@ endmodule
 
 // Sync reset, enable.
 
-module  \$__DFFSE_NN0 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDRE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .R(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFSE_NP0 (input D, C, E, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
     $error("Spartan 6 doesn't support FFs with reset initialized to 1");
   else
     FDRE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .R( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFSE_PN0 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b1)
-    $error("Spartan 6 doesn't support FFs with reset initialized to 1");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDRE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .R(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
@@ -364,34 +210,12 @@ module  \$__DFFSE_PP0 (input D, C, E, R, output Q);
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule
 
-module  \$__DFFSE_NN1 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDSE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .S(NR));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
 module  \$__DFFSE_NP1 (input D, C, E, R, output Q);
   parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
   generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
     $error("Spartan 6 doesn't support FFs with set initialized to 0");
   else
     FDSE_1 #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .S( R));
-  endgenerate
-  wire _TECHMAP_REMOVEINIT_Q_ = 1;
-endmodule
-module  \$__DFFSE_PN1 (input D, C, E, R, output Q);
-  parameter [0:0] _TECHMAP_WIREINIT_Q_ = 1'bx;
-  generate if (_TECHMAP_WIREINIT_Q_ === 1'b0)
-    $error("Spartan 6 doesn't support FFs with set initialized to 0");
-  else
-    wire NR;
-    INV inv (.O(NR), .I(R));
-    FDSE   #(.INIT(_TECHMAP_WIREINIT_Q_)) _TECHMAP_REPLACE_ (.D(D), .Q(Q), .C(C), .CE(E), .S(NR));
   endgenerate
   wire _TECHMAP_REMOVEINIT_Q_ = 1;
 endmodule

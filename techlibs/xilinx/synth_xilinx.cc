@@ -460,8 +460,6 @@ struct SynthXilinxPass : public ScriptPass
 		}
 
 		if (check_label("fine")) {
-			// Required for dff2dffe to work well.
-			run("clean");
 			run("dff2dffe -direct-match $_DFF_* -direct-match $__DFFS_*");
 			if (help_mode) {
 				run("muxcover <internal options>, ('-widemux' only)");
